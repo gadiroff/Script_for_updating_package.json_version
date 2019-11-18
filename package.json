@@ -1,6 +1,6 @@
 {
   "name": "pst-frontend",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/src/index.js",
