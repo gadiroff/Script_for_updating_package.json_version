@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+
+import ctypes
+
+with open('./package.json') as f:
+    line = f.readlines()
+
+    line = line[2]
+    line = line.split()
+
+    line = ctypes.create_string_buffer(line)
+    patch = int(line[2][18])
+    print(patch)
