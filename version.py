@@ -2,10 +2,14 @@
 
 import os
 import sys
+import subprocess as sp
 
+cmd1 = 'git branch'
+branch = sp.getoutput(cmd1)
+branch = branch.split(" ")
+print(branch)
 
 v = 3
-
 class CharList(list):
 
     def __init__(self, s):
@@ -52,18 +56,22 @@ with open('package.json', 'r+') as f:
         line_new[19] = '0'
     print(line_new)
 
+
 s = open("package.json").read()
-s = s.replace(str(line_old), str(line_new))
-f = open("package.json", 'w')
-f.write(s)
-f.close()
+for key, value  in enumerate(branch):
+    if 'release' == value[:7] and branch[(branch.index(value) - 1)][-1]  == '*':
+        s = s.replace(str(line_old), str(line_new))
+        f = open("package.json", 'w')
+        f.write(s)
+        f.close()
+    elif '*release' == value[:8]:
+        s = s.replace(str(line_old), str(line_new))
+        f = open("package.json", 'w')
+        f.write(s)
+        f.close()
 
-cmd = 'git add . && git commit -m "Increase package.json file version" && git push'
-os.system(cmd)
 
 
-
-
-
-
+cmd2 = 'git add . && git commit -m "Increase package.json file version" && git push'
+os.system(cmd2)
 
