@@ -5,7 +5,10 @@ import sys
 
 
 cmd1 = 'git branch'
-branch = os.system(cmd1)
+branch = os.popen(cmd1)
+
+#cmd1 = 'git branch'
+#branch = os.system(cmd1)
 
 
 
