@@ -61,7 +61,7 @@ with open('package.json', 'r+') as f:
     print(line_new)
 
 s = open("package.json").read()
-if 'master' in branch:
+if 'test' in branch and (branch.index('test') - 1) == int(branch.index('*')):
     s = s.replace(str(line_old), str(line_new))
     f = open("package.json", 'w')
     f.write(s)
