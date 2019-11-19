@@ -8,7 +8,7 @@ import subprocess as sp
 cmd1 = 'git branch'
 branch = sp.getoutput(cmd1)
 
-print(branch[13])
+print(branch.split(" "))
 
 
 
