@@ -3,11 +3,15 @@
 import os
 import sys
 
+import subprocess as sp
 
 cmd1 = 'git branch'
-branch = os.popen(cmd1)
-branch = branch
+branch = sp.getoutput(cmd1)
 print(branch)
+
+#cmd1 = 'git branch'
+#branch = os.popen(cmd1)
+#print(branch)
 
 
 v = 3
