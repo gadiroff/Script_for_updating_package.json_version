@@ -9,9 +9,6 @@ cmd1 = 'git branch'
 branch = sp.getoutput(cmd1)
 print(branch)
 
-#cmd1 = 'git branch'
-#branch = os.popen(cmd1)
-#print(branch)
 
 
 v = 3
@@ -63,7 +60,7 @@ with open('package.json', 'r+') as f:
     print(line_new)
 
 s = open("package.json").read()
-if branch == '* master':
+if '* master' in branch:
     s = s.replace(str(line_old), str(line_new))
     f = open("package.json", 'w')
     f.write(s)
