@@ -7,7 +7,7 @@ import subprocess as sp
 
 cmd1 = 'git branch'
 branch = sp.getoutput(cmd1)
-print(branch)
+print(type(branch))
 
 
 
@@ -60,7 +60,7 @@ with open('package.json', 'r+') as f:
     print(line_new)
 
 s = open("package.json").read()
-if ' master' in branch:
+if ' ceka' in branch:
     s = s.replace(str(line_old), str(line_new))
     f = open("package.json", 'w')
     f.write(s)
