@@ -4,8 +4,8 @@ import os
 import sys
 
 
-cmd = 'git branch'
-branch = os.system(cmd)
+cmd1 = 'git branch'
+branch = os.system(cmd1)
 
 
 
@@ -64,8 +64,8 @@ if branch == '* master':
     f.write(s)
     f.close()
 
-cmd = 'git add . && git commit -m "Increase package.json file version" && git push'
-os.system(cmd)
+cmd2 = 'git add . && git commit -m "Increase package.json file version" && git push'
+os.system(cmd2)
 
 
 
