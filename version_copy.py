@@ -6,7 +6,7 @@ import sys
 
 cmd1 = 'git branch'
 branch = os.popen(cmd1)
-
+branch = branch
 print(branch)
 
 
