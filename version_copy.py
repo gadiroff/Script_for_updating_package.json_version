@@ -7,7 +7,8 @@ import subprocess as sp
 
 cmd1 = 'git branch'
 branch = sp.getoutput(cmd1)
-print(type(branch))
+
+print(type(branch[13]))
 
 
 
