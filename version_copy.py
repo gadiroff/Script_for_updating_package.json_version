@@ -7,9 +7,7 @@ import sys
 cmd1 = 'git branch'
 branch = os.popen(cmd1)
 
-#cmd1 = 'git branch'
-#branch = os.system(cmd1)
-
+print(branch)
 
 
 v = 3
