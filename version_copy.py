@@ -61,7 +61,7 @@ with open('package.json', 'r+') as f:
     print(line_new)
 
 s = open("package.json").read()
-if ' ceka' in branch:
+if 'master' in branch:
     s = s.replace(str(line_old), str(line_new))
     f = open("package.json", 'w')
     f.write(s)
