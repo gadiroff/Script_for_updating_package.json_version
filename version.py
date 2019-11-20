@@ -2,12 +2,11 @@
 
 import os
 import sys
-import subprocess as sp
 
 cmd1 = 'git branch'
-branch = sp.getoutput(cmd1)
+branch = os.popen(cmd1)
+branch = branch.read()
 branch = branch.split(" ")
-print(branch)
 
 v = 3
 class CharList(list):
@@ -39,7 +38,6 @@ class CharList(list):
 with open('package.json', 'r+') as f:
     all_ = f.readlines()
     line_old = all_[2]
-    print(line_old)
     line_new = CharList(line_old)
     release_count = int(line_new[18])
     if line_new[19] == '"':
@@ -54,7 +52,6 @@ with open('package.json', 'r+') as f:
         release_count += 1
         line_new[18]  = str(release_count)
         line_new[19] = '0'
-    print(line_new)
 
 
 s = open("package.json").read()
