@@ -30,11 +30,6 @@ set_version() {
 	echo 'Updated package.json'
 	cat package.json
 	
-	git config --global user.email "teamcity.agent@epicgames.com"
-	git config --global user.name "teamcity-agent"
-	git add package.json
-	git commit -m "Bump version to $NEW_VERSION"
-	git tag "v$NEW_VERSION"
 	branch=$(git status | grep "On branch" | cut -d' ' -f3)
 	REMOTE_REPO=$(git remote -v | head -n 1 | cut -f1)
 	
