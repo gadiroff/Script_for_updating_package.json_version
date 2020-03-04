@@ -17,7 +17,12 @@ set_version() {
 
         current_count=$(echo " ${PACKAGE_VERSION[@]: -1} ")
     new_count=$(( $current_count + 1 ))
+    if [ ${#PACKAGE_VERSION} -eq 5 ];
+    then
     NEW_VERSION=`echo $PACKAGE_VERSION  | sed s/./$new_count/5`
+    else
+    NEW_VERSION=`echo $PACKAGE_VERSION  | sed s/./$new_count/6`
+    fi;
 
 
 
@@ -62,8 +67,8 @@ set_version() {
         
 
 
-	git config --global user.email "teamcity.agent@test.com"
-	git config --global user.name "teamcity-agent"
+	git config --global user.email "jeyhun.gadirov@gmail.com"
+	git config --global user.name "jeyhun gadirov"
 	git add package.json
 	git commit -m "Bump version to $NEW_VERSION"
     git fetch --tags
