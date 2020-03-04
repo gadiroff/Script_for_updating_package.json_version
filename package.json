@@ -1,17 +1,7 @@
 {
-  "name": "pst-frontend",
+  "name": "frontend",
   "version": "0.2.12",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon server/src/index.js",
-    "start": "cross-env NODE_ENV=gamedev node server/src/index.js",
-    "start:ci": "cross-env NODE_ENV=ci node server/src/index.js",
-    "build": "node client/scripts/build.js",
-    "go": "yarn build && yarn start",
-    "test:client": "cross-env NODE_ENV=test node client/scripts/test.js --config=client/config/jest/jest.config.js --coverage --watchAll=false",
-    "test:server": "cross-env NODE_ENV=test jest --config=server/config/jest.config.js --coverage --watchAll=false",
-    "test": "yarn test:server && yarn test:client",
-    "lint": "yarn eslint && yarn stylelint",
-    "eslint": "eslint --ext js,jsx client/src server/src",
-    "stylelint": "stylelint client/**/*.scss"
+    
   }
